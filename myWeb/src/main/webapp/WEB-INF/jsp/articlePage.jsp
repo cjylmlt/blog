@@ -34,6 +34,7 @@
 		</div>
 		<div class="main_right" id="contentShow">
 			<%@ include file="articleDetail.jsp"%>
+			<%@ include file="articleComments.jsp"%>
 		</div>
 
 	</div>

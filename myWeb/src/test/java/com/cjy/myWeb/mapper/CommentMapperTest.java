@@ -18,9 +18,10 @@ import org.junit.Test;
 
 import com.cjy.myWeb.mapper.ArticleMapper;
 import com.cjy.myWeb.po.Article;
+import com.cjy.myWeb.po.Comment;
 import com.cjy.myWeb.po.User;
 
-public class ArticleMapperTest {
+public class CommentMapperTest {
 	private static SqlSessionFactory sqlSessionFactory;
 
 	@BeforeClass
@@ -45,9 +46,9 @@ public class ArticleMapperTest {
 	@Test
 	public void test() {
 //		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		ArticleMapper articleMapper = sqlSession.getMapper(ArticleMapper.class);
-//		System.out.println(articleMapper.findArticleListByPage("111", 0));
-//		sqlSession.close();
+//		CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
+//		
+//		System.out.println(commentMapper.findCommentByArticleId("402881f25a8a68e1015a8a6968e90000"));
 	}
 
 }

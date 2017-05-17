@@ -2,6 +2,7 @@ package com.cjy.myWeb.controller;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,17 +19,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cjy.myWeb.mapper.ArticleMapper;
 import com.cjy.myWeb.po.Article;
+import com.cjy.myWeb.service.CommentService;
 import com.mysql.fabric.Response;
 @Controller
 public class ArticleController {
 	@Autowired
 	private ArticleMapper articleMapper;
+	@Autowired
+	private CommentService commentService;
 	@RequestMapping("/articlePage/{articleId}")
 	public ModelAndView articleDetail(@PathVariable("articleId") String articleId){
 		ModelAndView modelAndView = new ModelAndView();
 		Article article = articleMapper.findArticleById(articleId);
 		modelAndView.setViewName("articlePage");
 		modelAndView.addObject("article", article);
+		modelAndView.addObject("articleComments",commentService.loadComment(articleId));
 		return modelAndView;
 	}
 	@RequestMapping("/writeArticle")
