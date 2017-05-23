@@ -1,6 +1,9 @@
 com\cjy\myWeb\service\PageService.class
+com\cjy\myWeb\vo\CommentVo.class
 com\cjy\myWeb\mapper\CommentMapper.class
+com\cjy\myWeb\service\impl\ArticleServiceImpl.class
 com\cjy\myWeb\mapper\ArticleMapper.class
+com\cjy\myWeb\service\ArticleService.class
 com\cjy\myWeb\utils\PageUtil.class
 com\cjy\myWeb\po\Page.class
 com\cjy\myWeb\service\impl\UserServiceImpl$1.class
@@ -16,6 +19,8 @@ com\cjy\myWeb\controller\ArticleController.class
 com\cjy\myWeb\service\UserService.class
 com\cjy\myWeb\po\User.class
 com\cjy\myWeb\controller\FileController.class
+com\cjy\myWeb\service\CommentService.class
 com\cjy\myWeb\controller\DrawImageController.class
 com\cjy\myWeb\service\impl\UserServiceImpl.class
 com\cjy\myWeb\interceptor\LoginInterceptor.class
+com\cjy\myWeb\service\impl\CommentServiceImpl.class

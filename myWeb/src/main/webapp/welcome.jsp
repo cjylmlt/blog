@@ -5,14 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome here</title>
+<script type="text/javascript">
+		function changeLocation(){
+			window.location.replace("${pageContext.request.contextPath}/index");
+		}
+</script>
 </head>
 <body>
-welcome!
-<br>
-<a href="${pageContext.request.contextPath}/register">点击此处注册</a>
-<br>
-<a href="${pageContext.request.contextPath}/login">点击此处登陆</a>
-<br>
-<a href="${pageContext.request.contextPath}/login">点击此处登陆</a>
+<script>
+changeLocation();
+</script>
 </body>
 </html>

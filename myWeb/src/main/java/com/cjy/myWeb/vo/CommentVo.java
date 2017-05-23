@@ -1,6 +1,7 @@
 package com.cjy.myWeb.vo;
 
 import java.util.Date;
+import java.util.List;
 
 import com.cjy.myWeb.po.Article;
 import com.cjy.myWeb.po.User;
@@ -13,6 +14,7 @@ public class CommentVo {
 	private String floor;
 	private String commentContent;
 	private Date commentDate;
+	private List<CommentVo> secondComment;
 	public String getCommentId() {
 		return commentId;
 	}
@@ -55,5 +57,12 @@ public class CommentVo {
 	public void setCommentDate(Date commentDate) {
 		this.commentDate = commentDate;
 	}
+	public List<CommentVo> getSecondComment() {
+		return secondComment;
+	}
+	public void setSecondComment(List<CommentVo> secondComment) {
+		this.secondComment = secondComment;
+	}
+	
 	
 }

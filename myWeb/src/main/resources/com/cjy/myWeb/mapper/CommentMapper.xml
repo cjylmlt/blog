@@ -8,10 +8,11 @@
 		<result column="comment_article" property="commentArticle"/>
 		<result column="comment_content" property="commentContent"/>
 		<result column="floor" property="floor"/>
-		<result column="comment_date" jdbcType="TIMESTAMP" property="commentDate" javaType="java.util.Date" />  
+		<result column="comment_date" jdbcType="TIMESTAMP" property="commentDate" javaType="java.util.Date" /> 
+		<result column="is_main" property="isMain"/> 
 	</resultMap>
-	<select id="findCommentByArticleId" parameterType="String" resultMap="commentResultMap">
-		select * from comment where comment_article = #{value}
+	<select id="findFirstCommentByArticleId" parameterType="String" resultMap="commentResultMap">
+		select * from comment where comment_article = #{value} and is_main = 1;
 	</select>
 	<select id="findCommentByCommentId" parameterType="String" resultMap="commentResultMap">
 		select * from comment where comment_id = #{value}
@@ -23,10 +24,13 @@
 		select * from comment where reply_user = #{value}
 	</select>
 	<insert id="insertComment" parameterType="com.cjy.myWeb.po.Comment">
-		INSERT INTO comment (comment_id, comment_user, comment_article, reply_user, comment_content, comment_date, floor) 
-		VALUES (#{commentId}, #{commentUser}, #{commentArticle}, #{replyUser}, #{commentContent}, #{commentDate,jdbcType=TIMESTAMP}, #{floor})
+		INSERT INTO comment (comment_id, comment_user, comment_article, reply_user, comment_content, comment_date, floor,is_main) 
+		VALUES (#{commentId}, #{commentUser}, #{commentArticle}, #{replyUser}, #{commentContent}, #{commentDate,jdbcType=TIMESTAMP}, #{floor},#{isMain})
 	</insert>
 	<delete id="deleteComment" parameterType="String" >
 		delete from comment where comment_id = #{value}
 	</delete>
+	<select id="findSecondCommentByFloor" parameterType="String" resultMap="commentResultMap">
+		select * from comment where floor = #{value} and is_main = 0;
+	</select>
 </mapper>

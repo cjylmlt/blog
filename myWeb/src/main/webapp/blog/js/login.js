@@ -1,7 +1,7 @@
 /*
  * 用户登录注册
- * author:jyh
- * date:2017-2-22
+ * author:cjy
+ * date:2017-4-22
  */
 
 var loginEvent = {
@@ -159,7 +159,7 @@ var loginEvent = {
 					data:user,
 					success:function(data){
 						if(data.state == "0"){
-							window.location.href='/MyBlog/index.action';
+							window.location.href='${pageContext.request.contextPath}/index.action';
 						}else if(data.state == "2"){
 							alert(data.message);
 						}else{

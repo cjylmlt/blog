@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjy.myWeb.mapper.EducationMapper">
+	<resultMap type="com.cjy.myWeb.po.Education" id="educationResultMap">
+		<result column = "education_id" property="educationId"/>
+		<result column = "user_id" property="userId"/>
+		<result column = "start_date" jdbcType="TIMESTAMP" property="startDate" javaType="java.util.Date"/>
+		<result column = "end_date" jdbcType="TIMESTAMP" property="endDate" javaType="java.util.Date"/>
+	</resultMap>
+	<select id="findEducationByUserId" parameterType="String" resultMap="educationResultMap">
+		select * from education where user_id=#{value} order by start_date
+	</select>
+</mapper>

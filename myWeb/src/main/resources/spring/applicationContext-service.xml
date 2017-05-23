@@ -7,4 +7,5 @@
      <bean id="userLoginService" class="com.cjy.myWeb.service.impl.UserServiceImpl"/>
      <bean id="pageService" class="com.cjy.myWeb.service.impl.PageServiceImpl"/>
      <bean id="commentService" class="com.cjy.myWeb.service.impl.CommentServiceImpl"/>
+      <bean id="educationService" class="com.cjy.myWeb.service.impl.EducationServiceImpl"/>
 </beans>

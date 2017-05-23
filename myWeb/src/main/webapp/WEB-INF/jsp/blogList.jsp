@@ -30,12 +30,11 @@
 				  			<div class = "blog_title"><a href="${pageContext.request.contextPath}/articlePage/${article.id}">${article.title}</a></div>
 				  			<div class = "article_content">${article.summary}</div>
 				  			<div class = "article_info">
-				  			<span>
-				  			<fmt:formatDate value="${article.date }" pattern="yyyy-MM-dd"/>
-				  				<%--<c:date name="#article[3]" format="yyyy-MM-dd HH:mm" timezone="GMT+00:00"/>--%>
-			  				</span>
-				  			&nbsp;&nbsp;&nbsp;<a href="articleDetail.action?article.id=${article.id}">阅读(${article.readNum})</a>
-				  			&nbsp;&nbsp;&nbsp;<a href="articleDetail.action?article.id=${article.id}#articleComments">评论(${article.commentNum})</a></div>
+				  			<span> 
+									<fmt:formatDate value="${article.date }" pattern="yyyy-MM-dd HH:MM:SS"/>
+							</span>
+				  			&nbsp;&nbsp;&nbsp;<a style="font-size:15px" href="articleDetail.action?article.id=${article.id}">阅读(${article.readNum})</a>
+				  			&nbsp;&nbsp;&nbsp;<a style="font-size:15px" href="articleDetail.action?article.id=${article.id}#articleComments">评论(${article.commentNum})</a></div>
 				  		</div>
 				  	</div>
 				</div>

@@ -52,7 +52,7 @@
 		<div class="head_main">
 			<div class="logo">
 				<img src="${pageContext.request.contextPath}/blog/images/user.jpg"> <a id="gohome"
-					href="${pageContext.request.contextPath}/index">CJY博客</a>
+					href="${pageContext.request.contextPath}/index">BLOG</a>
 			</div>
 			<div class="head_search">
 				<form action="searchAllArticle.action" method="post" target="_blank">
@@ -86,4 +86,4 @@
 			</div>
 		</div>
 	</div>
-	<div id="main" class="main">
+	

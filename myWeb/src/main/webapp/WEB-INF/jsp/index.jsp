@@ -17,9 +17,10 @@
 </head>
 <body background="${pageContext.request.contextPath}/blog/images/background.jpg">
 	<%@ include file="common/head.jsp"%>
+	<div id="main" class="main">
 	<input hidden id="isArticleClass" value="1"/>
 	<div class="mytitle">
-		<h1>CJY博客</h1>
+		<h1>CJYBLOG</h1>
 		<h3>DEBUG!!!!</h3>
 	</div>
 	<div class="main_content">
@@ -29,10 +30,12 @@
 		</div>
 		<div class="main_right" id="contentShow">
 			<%@ include file="blogList.jsp"%>
+			<%@ include file="articleComments.jsp"%>
 		</div>
 
 	</div>
-	<%@ include file="common/tail.jsp"%>
+<%@ include file="common/tail.jsp"%>
+	</div>
 </body>
 
 </html>

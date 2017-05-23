@@ -11,6 +11,7 @@ public class Comment {
 	private String floor;
 	private String commentContent;
 	private Date commentDate;
+	private int isMain;
 
 	public String getCommentId() {
 		return commentId;
@@ -68,10 +69,20 @@ public class Comment {
 		this.commentDate = commentDate;
 	}
 
+
+	public int getIsMain() {
+		return isMain;
+	}
+
+	public void setIsMain(int isMain) {
+		this.isMain = isMain;
+	}
+
 	@Override
 	public String toString() {
 		return "Comment [commentId=" + commentId + ", replyUser=" + replyUser + ", commentUser=" + commentUser
 				+ ", commentArticle=" + commentArticle + ", floor=" + floor + ", commentContent=" + commentContent
-				+ ", commentDate=" + commentDate + "]";
+				+ ", commentDate=" + commentDate + ", isMain=" + isMain + "]";
 	}
+	
 }

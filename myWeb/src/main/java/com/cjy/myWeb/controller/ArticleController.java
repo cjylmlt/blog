@@ -31,9 +31,11 @@ public class ArticleController {
 	public ModelAndView articleDetail(@PathVariable("articleId") String articleId){
 		ModelAndView modelAndView = new ModelAndView();
 		Article article = articleMapper.findArticleById(articleId);
+		article.setReadNum(article.getReadNum()+1);
 		modelAndView.setViewName("articlePage");
 		modelAndView.addObject("article", article);
 		modelAndView.addObject("articleComments",commentService.loadComment(articleId));
+		articleMapper.updateArticle(article);
 		return modelAndView;
 	}
 	@RequestMapping("/writeArticle")

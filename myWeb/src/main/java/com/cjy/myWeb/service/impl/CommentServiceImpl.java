@@ -23,23 +23,38 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public List<CommentVo> loadComment(String articleId) {
 		// TODO Auto-generated method stub
-		List<Comment> commentList = commentMapper.findCommentByArticleId(articleId);
+		List<Comment> commentList = commentMapper.findFirstCommentByArticleId(articleId);
 		ArrayList<CommentVo> result = new ArrayList<>();
 		for(Comment comment:commentList){
-			String commentUserId = comment.getCommentUser();
-			String replyUserId = comment.getReplyUser();
-			String artcleId = comment.getCommentArticle();
-			CommentVo commentVo = new CommentVo();
-			commentVo.setCommentId(comment.getCommentId());
-			commentVo.setReplyUser(userMapper.findUserById(replyUserId));
-			commentVo.setCommentUser(userMapper.findUserById(commentUserId));
-			commentVo.setCommentArticle(articleMapper.findArticleById(artcleId));
-			commentVo.setFloor(comment.getFloor());
-			commentVo.setCommentContent(comment.getCommentContent());
-			commentVo.setCommentDate(comment.getCommentDate());
-			result.add(commentVo);
+			CommentVo firstComment = commentToCommentVo(comment);
+			firstComment.setSecondComment(loadSecondComment(firstComment.getFloor()));
+			result.add(firstComment);
 		}
 		return result;
+	}
+	@Override
+	public List<CommentVo> loadSecondComment(String floor) {
+		List<Comment> secondCommentList = commentMapper.findSecondCommentByFloor(floor);
+		ArrayList<CommentVo> result = new ArrayList<>();
+		for(Comment comment:secondCommentList){
+			result.add(commentToCommentVo(comment));
+		}
+		return result;
+	}
+	@Override
+	public CommentVo commentToCommentVo(Comment comment) {
+		String commentUserId = comment.getCommentUser();
+		String replyUserId = comment.getReplyUser();
+		String artcleId = comment.getCommentArticle();
+		CommentVo commentVo = new CommentVo();
+		commentVo.setCommentId(comment.getCommentId());
+		commentVo.setReplyUser(userMapper.findUserById(replyUserId));
+		commentVo.setCommentUser(userMapper.findUserById(commentUserId));
+		commentVo.setCommentArticle(articleMapper.findArticleById(artcleId));
+		commentVo.setFloor(comment.getFloor());
+		commentVo.setCommentContent(comment.getCommentContent());
+		commentVo.setCommentDate(comment.getCommentDate());
+		return commentVo;
 	}
 
 }

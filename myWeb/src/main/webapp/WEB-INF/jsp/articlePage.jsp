@@ -23,10 +23,12 @@
 </head>
 <body>
 	<%@ include file="common/head.jsp"%>
+	<div id="main" class="main">
 	<div class="mytitle">
-		<h1>CJY博客</h1>
+		<h1>CJYBLOG</h1>
 		<h3>DEBUG!!!!</h3>
 	</div>
+	<div>
 	<div class="main_content">
 		<div class="main_left">
 			<%@ include file="leftPage.jsp"%>
@@ -38,7 +40,9 @@
 		</div>
 
 	</div>
+	</div>
 	<%@ include file="common/tail.jsp"%>
+	</div>
 </body>
 
 </html>

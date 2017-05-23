@@ -45,10 +45,10 @@ public class CommentMapperTest {
 
 	@Test
 	public void test() {
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
-//		
-//		System.out.println(commentMapper.findCommentByArticleId("402881f25a8a68e1015a8a6968e90000"));
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
+		
+		System.out.println(commentMapper.findSecondCommentByFloor("1"));
 	}
 
 }

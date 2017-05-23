@@ -11,11 +11,13 @@
  * @returns
  */
 function GetQueryString(name) {
-	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-	var r = window.location.search.substr(1).match(reg);
-	if (r != null)
-		return (r[2]);
-	return null;
+	var curWwwPath=window.document.location.href;
+    
+    var pathName=window.document.location.pathname;
+    var pos=curWwwPath.lastIndexOf("/");
+   
+    var userId = curWwwPath.substring(pos+1,curWwwPath.length);
+	return userId;
 };
 
 var thisUserId = GetQueryString("userId");
@@ -95,7 +97,7 @@ var personalEvent = {
 	getUserData:function(u){
 		var userId = thisUserId;
 		if(userId == "" || userId == null){
-			window.location.href="/MyBlog/index.action";
+			window.location.href="/myWeb/index.action";
 			return;
 		}
 		$.ajax({

@@ -151,4 +151,9 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userMapper.findUserByUsername(username);
 	}
+
+	
+	public User findUserById(String userId) {
+		return userMapper.findUserById(userId);
+	}
 }

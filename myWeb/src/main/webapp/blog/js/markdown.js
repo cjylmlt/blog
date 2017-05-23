@@ -1,8 +1,8 @@
 
 /**
  * markdown编辑器
- * author:jyh
- * 2017-02-20
+ * author:cjy
+ * 2017-05-20
  */
 var data = null;
 

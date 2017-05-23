@@ -1,7 +1,6 @@
 /**
 *文章发表
-*author jyh
-*2017-02-26
+*author cjy
 */
 var cls = [];
 

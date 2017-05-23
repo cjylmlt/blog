@@ -15,4 +15,5 @@ public interface UserService {
 	public boolean checkLoginPassword(HttpServletRequest request,HttpServletResponse response);
 	public boolean registerNewUser(HttpServletRequest request,HttpServletResponse response);
 	public User findUserByUsername(String username);
+	public User findUserById(String userId);
 }

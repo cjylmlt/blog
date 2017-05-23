@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjy.myWeb.mapper.CommentMapper"> 
+	<resultMap type="com.cjy.myWeb.po.Comment" id="commentResultMap">
+		<result column="comment_id" property="commentId"/>
+		<result column="comment_user" property="commentUser"/>
+		<result column="reply_user" property="replyUser"/>
+		<result column="comment_article" property="commentArticle"/>
+		<result column="comment_content" property="commentContent"/>
+		<result column="floor" property="floor"/>
+		<result column="comment_date" jdbcType="TIMESTAMP" property="commentDate" javaType="java.util.Date" /> 
+		<result column="is_main" property="isMain"/> 
+	</resultMap>
+	<select id="findFirstCommentByArticleId" parameterType="String" resultMap="commentResultMap">
+		select * from comment where comment_article = #{value} and is_main = 1;
+	</select>
+	<select id="findCommentByCommentId" parameterType="String" resultMap="commentResultMap">
+		select * from comment where comment_id = #{value}
+	</select>
+	<select id="findCommentByCommentUser" parameterType="String" resultMap="commentResultMap">
+		select * from comment where comment_user = #{value}
+	</select>
+	<select id="findCommentByReplyUser" parameterType="String" resultMap="commentResultMap">
+		select * from comment where reply_user = #{value}
+	</select>
+	<insert id="insertComment" parameterType="com.cjy.myWeb.po.Comment">
+		INSERT INTO comment (comment_id, comment_user, comment_article, reply_user, comment_content, comment_date, floor,is_main) 
+		VALUES (#{commentId}, #{commentUser}, #{commentArticle}, #{replyUser}, #{commentContent}, #{commentDate,jdbcType=TIMESTAMP}, #{floor},#{isMain})
+	</insert>
+	<delete id="deleteComment" parameterType="String" >
+		delete from comment where comment_id = #{value}
+	</delete>
+	<select id="findSecondCommentByFloor" parameterType="String" resultMap="commentResultMap">
+		select * from comment where floor = #{value} and is_main = 0;
+	</select>
+</mapper>

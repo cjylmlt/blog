@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/blog/js/myBlog.js"></script>
 <script src="${pageContext.request.contextPath}/blog/js/marked.js"></script>
@@ -37,7 +38,8 @@
 								<div style="margin-bottom: 15px;">标签:${article.tag}</div>
 
 								<div class="select_other">
-									<div class="classification">文章所在分类:</div>
+									<div class="classification" style="width:500px">文章所在分类:${article.classification }></div>
+									<div><fmt:formatDate value="${article.date }" pattern="yyyy-MM-dd HH:MM:SS"/></div>
 									<%-- <c:forEach items="${article.articleClasses}" var="myArticleClass">
 			  					<div class="dropdown">
 								    <button type="button" class="bbtn dropdown-toggle" >

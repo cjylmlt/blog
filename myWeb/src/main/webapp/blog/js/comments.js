@@ -1,7 +1,7 @@
 /**
  * 评论交互页面
- * 2017-03-03
- * author:jyh
+ * 2017-05-03
+ * author:cjy
  */
 
 var comment = {

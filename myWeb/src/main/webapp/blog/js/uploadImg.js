@@ -1,6 +1,6 @@
 /**
 *	上传头像
-*	jyh
+*	cjy
 **/
 
 var myUploadImg = {

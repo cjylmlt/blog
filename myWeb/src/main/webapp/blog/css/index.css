@@ -7,7 +7,7 @@ div{
 .mytitle{
 	padding-top: 1px;
 	height:120px;
-	background-image: url(../images/title.png);
+	background-image: url(../images/title.jpg);
 }
 .mytitle h1{
 	margin-left: 45px;
@@ -113,7 +113,7 @@ li.first{
 	/*margin-bottom: 10px;
 	border-radius: 4px;*/
 }
-/*公共下拉框*/
+/*鍏叡涓嬫媺妗�*/
 .select_other{
 	float:left;
 }

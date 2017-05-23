@@ -14,7 +14,7 @@
 		<li class="list-group-item new-item">
 			<ul class="list-group">
 				<li href="#" class="list-group-item first">博主资料</li>
-				<li style="width:230px ;height:230px"><img src="${pageContext.request.contextPath}/picture/userImage/user.jpg" class="user_img"></li>
+				<li style="width:230px ;height:230px" ><img onclick="window.location.href='${pageContext.request.contextPath}/personalInfo/cjy'" src="${pageContext.request.contextPath}/picture/userImage/user.jpg" class="user_img"></li>
 				<li class="list-group-item first">联系方式</li>
 				<li class="list-group-item">电话:<a class="trick">点击查看</a></li>
 				<li class="list-group-item">微信:<a class="trick">点击查看</a></li>
